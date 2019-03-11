@@ -1,6 +1,5 @@
 # BitMesh-API文档
 
-[TOC] 
 
 <a name="68b2581b"></a>
 # API简介
