@@ -10,7 +10,7 @@
 
 <a name="ec97ee8d"></a>
 # 接入说明
-BitMesh目前提供 **rest** 与 **websocket** 两种接入方式；<br />BitMesh API目前提供“Public Https API”与“Private Https API”两种类型；<br />Public API 可以直接访问，Private API 需要使用 API KEY并通过 SHA256进行签名;<br />BitMesh所有的 Websocket请求都使用 [msgpack](https://msgpack.org/)进行编码；<br />BitMesh所有的 Rest API 都可以通过 Websocket方式调用，同时Websocket API还能订阅数据，当产生响应的数据时服务端会主动推送（参照下文 [Websocket API](https://www.yuque.com/thirteen/kb/vgrxoe#adb18e42)）。
+BitMesh目前提供 **rest** 与 **websocket** 两种接入方式；<br />BitMesh API目前提供“Public Https API”与“Private Https API”两种类型；<br />Public API 可以直接访问，Private API 需要使用 API KEY并通过 SHA256进行签名;<br />BitMesh所有的 Websocket请求都使用 [msgpack](https://msgpack.org/)进行编码；<br />BitMesh所有的 Rest API 都可以通过 Websocket方式调用，同时Websocket API还能订阅数据，当产生响应的数据时服务端会主动推送（参照下文 [Websocket API](#adb18e42)）。
 
 <a name="d8ae4cd2"></a>
 ## API KEY
@@ -37,13 +37,13 @@ BitMesh目前提供 **rest** 与 **websocket** 两种接入方式；<br />BitM
 
 **请求错误**<br />当请求遇到错误时，错误信息将通过 "data" 中的 "mssage" 返回，示例如下
 
-```javascript
+```json
 {
-	"success": true,
-	"data": {
-		"success": false,
-		"message": "market is required"
-	}
+  "success": true,
+  "data": {
+    "success": false,
+    "message": "market is required"
+  }
 }
 ```
 [
@@ -157,20 +157,20 @@ https://api.bitmesh.com/?api=market.list
 ```
 
 **响应示例**<br />**
-```javascript
+```json
 {
-	"success": true,
-	"data": [
-	{
-		"name": "btc_beam",
-		"funds": "BTC",
-		"stock": "BEAM"
-	},
-	{
-		"name": "btc_grin",
-		"funds": "BTC",
-		"stock": "GRIN"
-	},
+  "success": true,
+  "data": [
+  {
+    "name": "btc_beam",
+    "funds": "BTC",
+    "stock": "BEAM"
+  },
+  {
+    "name": "btc_grin",
+    "funds": "BTC",
+    "stock": "GRIN"
+  },
  ……
 ```
 
@@ -199,19 +199,28 @@ https://api.bitmesh.com/?api=market.ticker
 ```
 <br /><br />**响应示例**<br />**
 ```json
-{ success: true,
-  data:
-   { btc_xlm: { name: 'btc_xlm', change: 0 },
-     btc_eth:
-      { name: 'btc_eth',
-        price: '0.26512027',
-        volume: '100',
-        value: '2.651202',
-        max: '0.26512027',
-        min: '0.23323451',
-        change: "2.85" },
-     btc_ltc: { name: 'btc_ltc', change: 0 }
-    ……
+{
+  "success": true,
+  "data": {
+    "btc_xlm": {
+      "name": "btc_xlm",
+      "change": 0
+    },
+    "btc_eth": {
+      "name": "btc_eth",
+      "price": "0.26512027",
+      "volume": "100",
+      "value": "2.651202",
+      "max": "0.26512027",
+      "min": "0.23323451",
+      "change": "2.85"
+    },
+    "btc_ltc": {
+      "name": "btc_ltc",
+      "change": 0
+    }
+  }
+}
 ```
 
 <a name="market.depth"></a>
@@ -241,8 +250,8 @@ https://api.bitmesh.com/?api=market.depth&params={"market":"btc_grin","limit":2,
 **响应示例**<br />**
 ```json
 {
-	"success": true,
-	"data": {
+  "success": true,
+  "data": {
     "bids": [
       [
         0.00080711,
@@ -388,19 +397,27 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 **响应示例**<br />**
 ```json
 {
-  success: true,
-  data:[
-    { name: 'BTC',
-       amount: '99.99996023',
-       frozen: '0.04813444',
-       available: '99.95182579' },
-     { name: 'ETH',
-       amount: '9.99985',
-       frozen: 0,
-       available: '9.99985' },
-     { name: 'USDC', amount: 0, frozen: 0, available: 0 }
-    ……
-  ] 
+  "success": true,
+  "data": [
+    {
+      "name": "BTC",
+      "amount": "99.99996023",
+      "frozen": "0.04813444",
+      "available": "99.95182579"
+    },
+    {
+      "name": "ETH",
+      "amount": "9.99985",
+      "frozen": 0,
+      "available": "9.99985"
+    },
+    {
+      "name": "USDC",
+      "amount": 0,
+      "frozen": 0,
+      "available": 0
+    }
+  ]
 }
 ```
 
@@ -421,7 +438,7 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 
 **返回示例**<br />**
 ```json
-{ success: true, data: '1552117835346623381206561830' }
+{ "success": true, "data": "1552117835346623381206561830" }
 ```
 
 
@@ -436,9 +453,9 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 **返回示例**<br />**
 ```json
 { 
-  success: true, 
-  data: [
-    '1552117835346623381206561830','1552117835346623381206561831',……
+  "success": true, 
+  "data": [
+    "1552117835346623381206561830","1552117835346623381206561831"
   ] 
 }
 ```
@@ -458,7 +475,7 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 
 **返回示例**<br />**
 ```json
-{ success: true, data: true }
+{ "success": true, "data": true }
 ```
 
 <a name="4a080cfe"></a>
@@ -472,10 +489,11 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 **返回示例**<br />**
 ```json
 { 
-  success: true, 
-  data: [
-    true, true, true ...
-  ] }
+  "success": true, 
+  "data": [
+    true, true, true
+  ] 
+}
 ```
 
 
@@ -489,7 +507,7 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 
 **返回示例**<br />**
 ```json
-{ success: true, data: true }
+{ "success": true, "data": true }
 ```
 
 <a name="order.pending"></a>
@@ -520,33 +538,36 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 
 **返回示例**<br />**
 ```json
-{ success: true,
-  data:
-   [ { id: '1552117835346623381206561830',
-       createtime: 1552117835346,
-       price: '0.021375',
-       userid: '3pTwHQUJSibYm9GXjnrcFE',
-       side: '1',
-       leftamount: '10.2',
-       leftfunds: '0.218025',
-       market: 'btc_eth',
-       type: '1',
-       filledamount: 0,
-       filledfunds: 0 
-     },
-     { id: '1552117811659591748048861408',
-       createtime: 1552117811659,
-       price: '0.021376',
-       userid: '3pTwHQUJSibYm9GXjnrcFE',
-       side: '1',
-       leftamount: '10.2',
-       leftfunds: '0.218025',
-       market: 'btc_eth',
-       type: '1',
-       filledamount: 0,
-       filledfunds: 0 
-     } 
-   ] 
+{
+  "success": true,
+  "data": [
+    {
+      "id": "1552117835346623381206561830",
+      "createtime": 1552117835346,
+      "price": "0.021375",
+      "userid": "3pTwHQUJSibYm9GXjnrcFE",
+      "side": "1",
+      "leftamount": "10.2",
+      "leftfunds": "0.218025",
+      "market": "btc_eth",
+      "type": "1",
+      "filledamount": 0,
+      "filledfunds": 0
+    },
+    {
+      "id": "1552117811659591748048861408",
+      "createtime": 1552117811659,
+      "price": "0.021376",
+      "userid": "3pTwHQUJSibYm9GXjnrcFE",
+      "side": "1",
+      "leftamount": "10.2",
+      "leftfunds": "0.218025",
+      "market": "btc_eth",
+      "type": "1",
+      "filledamount": 0,
+      "filledfunds": 0
+    }
+  ]
 }
 ```
 
@@ -576,19 +597,21 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 
 **返回示例**<br />**
 ```json
-{ success: true,
-  data:
-   [ { id: '1552119988345858152416398117',
-       createtime: 1552119988345,
-       side: '2',
-       type: '1',
-       market: 'btc_eth',
-       filledamount: '0.1',
-       leftamount: 0,
-       filledfunds: '0.02651202',
-       leftfunds: '0' 
-     } 
-   ] 
+{
+  "success": true,
+  "data": [
+    {
+      "id": "1552119988345858152416398117",
+      "createtime": 1552119988345,
+      "side": "2",
+      "type": "1",
+      "market": "btc_eth",
+      "filledamount": "0.1",
+      "leftamount": 0,
+      "filledfunds": "0.02651202",
+      "leftfunds": "0"
+    }
+  ]
 }
 ```
 
@@ -619,17 +642,17 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 **返回示例**<br />**
 ```json
 {
-  success: true,
-  data:
-   { id: '1552118841532736701258292074',
-     createtime: 1552118841532,
-     price: '0.26512027',
-     leftamount: '0.281557',
-     filledamount: 0,
-     leftfunds: '0.07464646',
-     filledfunds: 0,
-     side: '1' 
-   } 
+  "success": true,
+  "data": {
+    "id": "1552118841532736701258292074",
+    "createtime": 1552118841532,
+    "price": "0.26512027",
+    "leftamount": "0.281557",
+    "filledamount": 0,
+    "leftfunds": "0.07464646",
+    "filledfunds": 0,
+    "side": "1"
+  }
 }
 ```
 
@@ -769,7 +792,7 @@ const Signature = sha256(accessKey + api + paramsStr + timestamp + accessSecret)
 ```javascript
 sha256('ErKy6TT813WE1czJxFrhimMgMM5pmidC787811' + 'order.put' + 'amount=0.2&market=btc_eth&price=0.1' + '1551323157987' + '12ff34e0dce1f74d78bf8837f5551e49c24e8302f51b8d24e658b902a20903f2e1').toString('hex').toLowerCase();
 
-5a848575009e99d71d25c259b99f7ba3894dd94e8f3a60bc363fed142bce2dfa
+// 5a848575009e99d71d25c259b99f7ba3894dd94e8f3a60bc363fed142bce2dfa
 ```
 
 <a name="93d33bf6"></a>
