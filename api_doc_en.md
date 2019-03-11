@@ -10,7 +10,7 @@ Welcome users with excellent Maker strategy  to participate in the  market Maker
 
 <a name="dfbcb1f3"></a>
 # Access instructions
-BitMesh currently provides two access methods: **rest** and **websocket**;<br />BitMesh API currently provides two types: "Public Https API" and "Private Https API;<br />The Public API can be accessed directly. The Private API needs to use the api key and sign it through sha256;<br />All Websocket requests are encoded using [msgpack](https://msgpack.org/);<br />All Rest APIs of BitMesh can be called through Websocket, And the Websocket API can also subscribe to data. When the response data is generated, the server will actively push (refer to the [Websocket API ](https://www.yuque.com/thirteen/kb/vgrxoe#adb18e42)below ).
+BitMesh currently provides two access methods: **rest** and **websocket**;<br />BitMesh API currently provides two types: "Public Https API" and "Private Https API;<br />The Public API can be accessed directly. The Private API needs to use the api key and sign it through sha256;<br />All Websocket requests are encoded using [msgpack](https://msgpack.org/);<br />All Rest APIs of BitMesh can be called through Websocket, And the Websocket API can also subscribe to data. When the response data is generated, the server will actively push (refer to the [Websocket API ](#adb18e42)below ).
 
 <a name="d8ae4cd2"></a>
 ## API KEY
@@ -365,7 +365,7 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 
 <a name="f323d8d8"></a>
 # Private Rest API example
-All Private API requests need to pass three parameters** "t" "acceskey" **and** "signature"** at the same time. Please see [# Full example for specific use](https://www.yuque.com/thirteen/kb/vgrxoe#39c58f5e)
+All Private API requests need to pass three parameters** "t" "acceskey" **and** "signature"** at the same time. Please see [# Full example for specific use](#39c58f5e)
 
 <a name="c904cfdf"></a>
 ## account.balance 
@@ -703,7 +703,7 @@ Server Data response
 ```
 The first element of the array 123 represents the id of this request, and the second element is the specific data.
 
-Private API call method please follow the[ Websocket call step](https://www.yuque.com/thirteen/kb/vgrxoe), first generate signature and call auth. api, the following steps are the same.
+Private API call method please follow the[ Websocket call step](#64e4aa7a), first generate signature and call auth. api, the following steps are the same.
 
 <a name="Subscription"></a>
 ## Subscription
