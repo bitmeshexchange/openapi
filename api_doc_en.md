@@ -35,17 +35,31 @@ Note: Only the following three parameters are required when requesting the Priva
 ## API return format
 All API return data is in JSON format.<br />At the top of JSON, there are several fields that represent the Request status and attributes: **"success"**, and **"data "**;<br />The content returned by the actual interface is in the "data" field, "success" means the request result, "true" means the request is successful, and "false" means the request fails.
 
-**Request Error**<br />When the request encounters an error, the error message will be returned via "mssage" in "data", as shown below
+<a name="b1762178"></a>
+## API error code
+When an error is encountered in the request, the error message will be returned via the "code" field, as shown below
 
 ```json
 {
-	"success": true,
-	"data": {
-		"success": false,
-		"message": "market is required"
-	}
+  "success": false,
+  "code": 404
 }
 ```
+
+Common error codes
+
+| code | description |
+| --- | --- |
+|404 |api_not_found|
+|100 |signature expired|
+|101 |signature invalid|
+|102 |accesskey requied|
+|103 |signature requied|
+|104 |accesskey invalid|
+|105 |api requied|
+|106 |accesskey not exist|
+|107 |request frequency limit|
+
 
 <a name="39c9c036"></a>
 ## Public API
