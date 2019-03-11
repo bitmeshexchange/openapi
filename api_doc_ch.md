@@ -661,7 +661,7 @@ BitMesh所有的 rest API 都可以通过websocket方式调用，同时websocket
 <a name="75b16081"></a>
 ## 请求
 客户端和服务端的数据传输采用msgpack编码格式，调用方式如下。
-```json
+```
 ws.send(msgpack.encode([
   id,
   api,
@@ -681,7 +681,7 @@ ws.send(msgpack.encode([
 
 发出调用请求
 
-```json
+```
 ws.send(msgpack.encode([
   123,
   'market.depth',
@@ -695,7 +695,7 @@ ws.send(msgpack.encode([
 
 服务端数据响应
 
-```json
+```
 [
   123,
   {
@@ -720,7 +720,7 @@ Private API调用方式请按照 [Websocket调用步骤]()，首先生成 signat
 ## 订阅
 目前websocket已默认集成用户成交数据的订阅，当用户的订单被成交时会主动收到服务端推送的消息，消息格式如下。
 
-```js
+```
 [
   "deal",
   {
