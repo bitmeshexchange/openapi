@@ -77,7 +77,7 @@ The Private API allows for queries and transactions on your Private account.
 | order.latestDeal | query order history |
 | order.detail  | query order details |
 
-Private API Request Parameters and return data details, please refer to the specific [Private Rest API ](https://www.yuque.com/thirteen/kb/vgrxoe#7e1dbffe)example below
+Private API Request Parameters and return data details, please refer to the specific [Private Rest API ](#7e1dbffe)example below
 
 **Note:**<br />In order to prevent data from being intercepted and tampered  during network transmission, whether it is Rest or Websocket, when requesting a Private API, you need to pass the three parameters of** "t", "acceskey" and "signature"** at the same time.
 
@@ -105,7 +105,7 @@ const Signature = sha256(accessKey + api + paramsStr + timestamp + accessSecret)
 ## Websocket call steps
 All rest APIs of BitMesh can be called through websocket, And the websocket interface can also subscribe to data (please refer to the example for subscription function)
 
-If you are requesting the Public API, you can request it directly (refer to the [Websocket API ](https://www.yuque.com/thirteen/kb/vgrxoe#adb18e42)example below)<br />If you are requesting a Private API, please follow these steps
+If you are requesting the Public API, you can request it directly (refer to the [Websocket API ](#adb18e42)example below)<br />If you are requesting a Private API, please follow these steps
 
 1. First of all, please generate signature according to the following methods.
 
@@ -133,9 +133,12 @@ ws.send(msgpack.encode([
 ## market.list  
 Get the list of tading pairs supported by BitMesh
 
-**params**<br />no
+**params**
+None
 
-**Response Data**<br />Array of trading pairs currently supported on BitMesh
+**Response Data**
+
+Array of trading pairs currently supported on BitMesh
 
 | Field | Type | Description |
 | --- | --- | --- |
@@ -143,12 +146,13 @@ Get the list of tading pairs supported by BitMesh
 | funds | string | Quote currency |
 | stock | string | Base currency |
 
-**Example request**<br />**
+**Example request**
+
 ```shell
 https://api.bitmesh.com/?api=market.list
 ```
 
-**Example response**<br />**
+**Example response**
 ```
 {
 	"success": true,
@@ -170,7 +174,8 @@ https://api.bitmesh.com/?api=market.list
 ## market.ticker 
 Get the latest ticker for all markets
 
-**params**<br />no
+**params**
+None
 
 **Response Data**
 
@@ -225,12 +230,13 @@ Market depth of one market
 | bids | array | array of bids（price，amount，Cumulative amount） |
 | asks | array | aarray of asks（price，amount，Cumulative amount） |
 
-**Example request**<br />**
+**Example request**
 ```shell
 https://api.bitmesh.com/?api=market.depth&params={"market":"btc_grin","limit":2,"group":8}
 ```
 
-**Example response**<br />**
+**Example response**
+
 ```json
 {
   "success": true,
@@ -289,12 +295,12 @@ Query transaction details
 | value | string | 24H Value (Quote currency) |
 | change | string | 24H change (%) (%) |
 
-**Example request**<br />**
+**Example request**
 ```shell
 https://api.bitmesh.com/?api=market.statistics&params={"market":"btc_grin"}
 ```
 
-**Example response**<br />**
+**Example response**
 ```json
 {
   "success": true,
@@ -328,7 +334,8 @@ Check the last 50 transaction records in the market<br />**params**
 | --- | --- | --- |
 | market | string | the trading pair to query |
 
-**Response Data**<br />Return 50 records of the recent transaction in the form of an array, followed by: **transaction time stamp (milliseconds)**, **Transaction direction**, **transaction price**, **transaction amount**<br />Direction of transaction: 1 indicates that Taker is Seller and 2 indicates that Taker is Buyer
+**Response Data**
+Return 50 records of the recent transaction in the form of an array, followed by: **transaction time stamp (milliseconds)**, **Transaction direction**, **transaction price**, **transaction amount**<br />Direction of transaction: 1 indicates that Taker is Seller and 2 indicates that Taker is Buyer
 
 **Example request**
 ```shell
@@ -364,9 +371,11 @@ All Private API requests need to pass three parameters** "t" "acceskey" **and** 
 ## account.balance 
 Query account balance
 
-**params**<br />no
+**params**
+None
 
-**Response Data**<br />Response to an array of asset
+**Response Data**
+Response to an array of asset
 
 | Field | Type | Description |
 | --- | --- | --- |
@@ -407,9 +416,10 @@ Make a Limit Order
 | amount | double | amount |
 | side | int | order type（1 buy，2 sell） |
 
-**Response Data**<br />Returns the order ID if the delegate is successful and the error message if it fails
+**Response Data**
+Returns the order ID if the delegate is successful and the error message if it fails
 
-**Example response**<br />**
+**Example response**
 ```
 { success: true, data: '1552117835346623381206561830' }
 ```
@@ -421,9 +431,10 @@ Place orders in batches
 
 **params**<br />The parameter is the same as order. put. The difference is that needs an Array
 
-**Response Data**<br />Returns an order ID array if the delegate is successful, and an error message if it fails
+**Response Data**
+Returns an order ID array if the delegate is successful, and an error message if it fails
 
-**Example response**<br />**
+**Example response**
 ```
 { 
   success: true, 
@@ -444,9 +455,10 @@ Cancel an order
 | market | string | the trading pair to query |
 | id | strin | order id |
 
-**Response Data**<br />Data returns true if the cancellation is successful, and error message if it fails
+**Response Data**
+Data returns true if the cancellation is successful, and error message if it fails
 
-**Example response**<br />**
+**Example response**
 ```
 { success: true, data: true }
 ```
@@ -455,11 +467,13 @@ Cancel an order
 ## order.batchCancel 
 Cancel Multiple Orders
 
-**params**<br />The parameter is the same as order. cancel. The difference is that needs an Array
+**params**
+The parameter is the same as order. cancel. The difference is that needs an Array
 
-**Response Data**<br />Data returns true if the cancellation is successful, and error message if it fails
+**Response Data**
+Data returns true if the cancellation is successful, and error message if it fails
 
-**Example response**<br />**
+**Example response**
 ```
 { 
   success: true, 
@@ -473,11 +487,13 @@ Cancel Multiple Orders
 ## order.cancelAll
 Cancel all orders
 
-**params**<br />no
+**params**
+None
 
-**Response Data**<br />Data returns true if the cancellation is successful, and error message if it fails
+**Response Data**
+Data returns true if the cancellation is successful, and error message if it fails
 
-**Example response**<br />**
+**Example response**
 ```
 { success: true, data: true }
 ```
@@ -492,7 +508,8 @@ Query pending orders
 | --- | --- | --- |
 | market | string | the trading pair to query |
 
-**Response Data**<br />order array if there are pending orders
+**Response Data**
+order array if there are pending orders
 
 | Field | Type | Description |
 | --- | --- | --- |
@@ -508,7 +525,8 @@ Query pending orders
 | filledamount | string | filled amount（Base currency） |
 | filledfunds | string | filled amount（Quote currency） |
 
-**Example response**<br />**
+**Example response**
+
 ```
 { success: true,
   data:
@@ -564,7 +582,7 @@ Query the completed order
 | filledamount | string | filled amount（Base currency） |
 | filledfunds | string | filled amount（Quote currency） |
 
-**Example response**<br />**
+**Example response**
 ```
 { success: true,
   data:
@@ -606,7 +624,7 @@ Query Order Details
 | filledfunds | string | filled amount（Quote currency） |
 | side | string | order side（1 is buy，2 is sell） |
 
-**Example response**<br />**
+**Example response**
 ```
 {
   success: true,
