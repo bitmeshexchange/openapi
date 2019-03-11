@@ -202,9 +202,11 @@ ws.send(msgpack.encode([
 ## market.list  
 获取所有 BitMesh支持的交易对列表
 
-**params参数**<br />无
+**params参数**
+无
 
-**响应数据**<br />响应为BitMesh当前支持的交易对数组
+**响应数据**
+响应为BitMesh当前支持的交易对数组
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -241,7 +243,8 @@ https://api.bitmesh.com/?api=market.list
 ## market.ticker 
 获取所有交易对的最新 ticker
 
-**params参数**<br />无
+**params参数**
+无
 
 **响应数据**
 
@@ -301,19 +304,20 @@ https://api.bitmesh.com/?api=market.ticker
 | limit | integer | 返回深度的数量 |
 | group | integer | 深度的价格聚合位数，默认为8，即精确到 0.00000001 |
 
-**响应数据**<br />响应数据为卖单及买单数组
+**响应数据**
+响应数据为卖单及买单数组
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | bids | array | 买单数组（价格，数量，累计数量） |
 | asks | array | 卖单数组（价格，数量，累计数量） |
 
-**请求示例**<br />**
+**请求示例**
 ```shell
 https://api.bitmesh.com/?api=market.depth&params={"market":"btc_grin","limit":2,"group":8}
 ```
 
-**响应示例**<br />**
+**响应示例**
 ```json
 {
   "success": true,
@@ -372,12 +376,12 @@ https://api.bitmesh.com/?api=market.depth&params={"market":"btc_grin","limit":2,
 | value | string | 24小时成交量（计价币种单位） |
 | change | string | 24小时涨幅百分比 |
 
-**请求示例**<br />**
+**请求示例**
 ```shell
 https://api.bitmesh.com/?api=market.statistics&params={"market":"btc_grin"}
 ```
 
-**响应示例**<br />**
+**响应示例**
 ```json
 {
   "success": true,
@@ -413,15 +417,17 @@ https://api.bitmesh.com/?api=market.statistics&params={"market":"btc_grin"}
 | --- | --- | --- |
 | market | string | 交易对名称 |
 
-**响应数据**<br />以数组形式返回最近成交的50条记录，依次为：**成交时间戳(毫秒)，成交方向，成交价格，成交数量**<br />**成交方向**：1 表示Taker为Seller，2 表示Taker为Buyer
+**响应数据**
+以数组形式返回最近成交的50条记录，依次为：**成交时间戳(毫秒)，成交方向，成交价格，成交数量**
+**成交方向**：1 表示Taker为Seller，2 表示Taker为Buyer
 
-**请求示例**<br />**
+**请求示例**
 ```shell
 https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 ```
 
-**响应示例**<br />**
-```json
+**响应示例**
+```
 {
   "success": true,
   "data": [
@@ -449,9 +455,11 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 ## account.balance 
 查询账户余额
 
-**params参数**<br />无
+**params参数**
+无
 
-**响应数据**<br />响应为资产信息数组
+**响应数据**
+响应为资产信息数组
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -460,7 +468,7 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 | frozen | string | 下单冻结数额 |
 | available | string | 可用余额 |
 
-**响应示例**<br />**
+**响应示例**
 ```json
 {
   "success": true,
@@ -500,9 +508,10 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 | amount | double | 数量 |
 | side | int | 订单方向（1为购买，2为出售） |
 
-**返回数据**<br />如果委托成功，则返回订单ID，如果失败则返回错误message
+**返回数据**
+如果委托成功，则返回订单ID，如果失败则返回错误message
 
-**返回示例**<br />**
+**返回示例**
 ```json
 { "success": true, "data": "1552117835346623381206561830" }
 ```
@@ -512,11 +521,13 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 ## order.batchPut 
 批量下单
 
-**params参数**<br />参数与order.put一样，区别是传入数组
+**params参数**
+参数与order.put一样，区别是传入数组
 
-**返回数据**<br />如果委托成功，则返回订单ID数组，如果失败则返回错误message
+**返回数据**
+如果委托成功，则返回订单ID数组，如果失败则返回错误message
 
-**返回示例**<br />**
+**返回示例**
 ```json
 { 
   "success": true, 
@@ -537,9 +548,10 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 | market | string | 交易对名称 |
 | id | strin | 订单id |
 
-**返回数据**<br />如果取消成功，则data返回为true，如果失败则返回错误message
+**返回数据**
+如果取消成功，则data返回为true，如果失败则返回错误message
 
-**返回示例**<br />**
+**返回示例**
 ```json
 { "success": true, "data": true }
 ```
@@ -548,11 +560,13 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 ## order.batchCancel 
 取消多个订单
 
-**params参数**<br />参数与order.cancel一样，区别是传入数组
+**params参数**
+参数与order.cancel一样，区别是传入数组
 
-**返回数据**<br />如果取消成功，则data返回为true，如果失败则返回错误message
+**返回数据**
+如果取消成功，则data返回为true，如果失败则返回错误message
 
-**返回示例**<br />**
+**返回示例**
 ```json
 { 
   "success": true, 
@@ -567,11 +581,13 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 ## order.cancelAll
 取消全部订单
 
-**params参数**<br />无
+**params参数**
+无
 
-**返回数据**<br />如果取消成功，则data返回为true，如果失败则返回错误message
+**返回数据**
+如果取消成功，则data返回为true，如果失败则返回错误message
 
-**返回示例**<br />**
+**返回示例**
 ```json
 { "success": true, "data": true }
 ```
@@ -586,7 +602,8 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 | --- | --- | --- |
 | market | string | 交易对名称 |
 
-**返回数据**<br />如果存在委托中订单，则返回订单数组
+**返回数据**
+如果存在委托中订单，则返回订单数组
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -602,7 +619,7 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 | filledamount | string | 已成交数量（基础币种单位） |
 | filledfunds | string | 已成交数量（计价币种单位） |
 
-**返回示例**<br />**
+**返回示例**
 ```json
 {
   "success": true,
@@ -661,7 +678,7 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 | filledamount | string | 已成交数量（基础币种单位） |
 | filledfunds | string | 已成交数量（计价币种单位） |
 
-**返回示例**<br />**
+**返回示例**
 ```json
 {
   "success": true,
@@ -705,7 +722,7 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 | filledfunds | string | 已成交数量（计价币种单位） |
 | side | string | 订单方向（1为购买，2为出售） |
 
-**返回示例**<br />**
+**返回示例**
 ```json
 {
   "success": true,
