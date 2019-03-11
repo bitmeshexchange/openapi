@@ -2,11 +2,11 @@
 
 <a name="68b2581b"></a>
 # API简介
-**欢迎使用BitMesh开发者文档，你可以使用API获得当前市场行情数据，进行交易，并且管理你的账户。**<br />如果你在使用过程中遇到任何问题，请添加[Telegram讨论群](https://t.me/bitmeshchat)，或微信客服号([bitmesh2]())，我们将尽力为您解答。
+**欢迎使用BitMesh开发者文档，你可以使用API获得当前市场行情数据，进行交易，并且管理你的账户。**<br />如果你在使用过程中遇到任何问题，请添加[Telegram讨论群](https://t.me/bitmeshchat)，或微信客服号 “bitmesh2”，我们将尽力为您解答。
 
 <a name="0cb03a07"></a>
 # 做市商项目
-欢迎有优秀 Maker 策略的用户参与BitMesh做市商项目，需要了解更多信息，请发送邮件至：[business@bitmesh.com]()，或者 [提交工单](https://help.bitmesh.com/hc/zh-cn/requests/new)
+欢迎有优秀 Maker 策略的用户参与BitMesh做市商项目，需要了解更多信息，请发送邮件至：”business@bitmesh.com“，或者 [提交工单](https://help.bitmesh.com/hc/zh-cn/requests/new)
 
 <a name="ec97ee8d"></a>
 # 接入说明
@@ -63,7 +63,7 @@ Public  API 允许你对公共市场数据进行访问。
 | market.statistics | 查询交易对详情 |
 | market.tradeHistory | 查询市场最新成交记录 |
 
-Public  API 请求参数及返回数据详情，请参照下文具体的 [Public ](https://www.yuque.com/thirteen/kb/vgrxoe#bf822c64)[Rest](https://www.yuque.com/thirteen/kb/vgrxoe#bf822c64)[  API ](https://www.yuque.com/thirteen/kb/vgrxoe#bf822c64)示例
+Public  API 请求参数及返回数据详情，请参照下文具体的 [Public REST API ](#bf822c64)示例
 
 <a name="f590773c"></a>
 ## Private  API
@@ -81,7 +81,7 @@ Private  API 允许对你的私人帐户进行查询和交易。
 | order.latestDeal | 查询已成交订单 |
 | order.detail  | 查询订单详情 |
 
-Private API 请求参数及返回数据详情，请参照下文具体的 [Private Rest API](https://www.yuque.com/thirteen/kb/vgrxoe#7e1dbffe) 示例
+Private API 请求参数及返回数据详情，请参照下文具体的 [Private Rest API](#7e1dbffe) 示例
 
 **注意：**<br />为防止数据在网络传输过程中被截取篡改，所以**无论是 Rest 方式，还是 Websocket 方式, 请求 Private  API 时都需要同时传递  "t"  "acce****ssKey"  "signature" 三个参数。**
 
@@ -109,7 +109,7 @@ const Signature = sha256(accessKey + api + paramsStr + timestamp + accessSecret)
 ## Websocket 调用步骤
 BitMesh所有的 rest API 都可以通过websocket方式调用，同时websocket接口还能订阅数据（订阅功能请参照示例）
 
-如果是请求 Public API，则可直接请求（参照下文 [Websocket API](https://www.yuque.com/thirteen/kb/vgrxoe#adb18e42) 示例）<br />如果是请求 Private API，请按以下步骤
+如果是请求 Public API，则可直接请求（参照下文 [Websocket API](#adb18e42) 示例）<br />如果是请求 Private API，请按以下步骤
 
 **1.**首先，请按照以下方法生成 signature。
 
@@ -379,7 +379,7 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 
 <a name="7e1dbffe"></a>
 # Private Rest  API 示例
-所有 Private API 请求都需要同时传递 "t" "accessKey" "signature"三个参数。具体使用请查看 [#完整示例](https://www.yuque.com/thirteen/kb/vgrxoe#39c58f5e)
+所有 Private API 请求都需要同时传递 "t" "accessKey" "signature"三个参数。具体使用请查看 [#Private Rest API调用完整示例](#39c58f5e)
 
 <a name="c904cfdf"></a>
 ## account.balance 
@@ -719,7 +719,7 @@ ws.send(msgpack.encode([
 ```
 其中数组第一个元素123表示本次请求的id，第二个元素为具体的数据。
 
-Private API调用方式请按照 [Websocket调用步骤]()，首先生成 signature 并调用 auth.api，后续步骤是相同的。
+Private API调用方式请按照 [Websocket调用步骤](#6dba2dfc)，首先生成 signature 并调用 auth.api，后续步骤是相同的。
 
 <a name="02daf71f"></a>
 ## 订阅
