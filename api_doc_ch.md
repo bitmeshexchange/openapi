@@ -78,17 +78,6 @@
 ## API 返回格式
 所有 API 返回数据都是JSON格式。<br />在JSON最上层有几个表示请求状态和属性的字段："success", 和 "data"；<br />实际接口返回的内容在 "data" 字段中，"success" 表示请求结果，true 表示请求成功，false 表示请求失败。
 
-**请求错误**<br />当请求遇到错误时，错误信息将通过 "data" 中的 "mssage" 返回，示例如下
-
-```json
-{
-  "success": true,
-  "data": {
-    "success": false,
-    "message": "market is required"
-  }
-}
-```
 
 <a name="b1762178"></a>
 ## API 错误码
