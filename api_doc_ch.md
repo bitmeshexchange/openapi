@@ -51,6 +51,31 @@
 }
 ```
 
+<a name="b1762178"></a>
+## API 错误码
+当请求遇到错误时，错误信息将通过 "code" 字段返回，示例如下
+
+```json
+{
+  "success": false,
+  "code": 404
+}
+```
+
+常见错误码
+
+| 错误码 | 描述 |
+| --- | --- |
+|404 |找不到对应的api|
+|100 |signature 过期|
+|101 |signature 错误|
+|102 |accesskey 缺失|
+|103 |signature 缺失|
+|104 |accesskey 错误|
+|105 |api 缺失|
+|106 |accesskey 不存在|
+|107 |请求频率受限|
+
 <a name="381df2ec"></a>
 ## Public  API
 Public  API 允许你对公共市场数据进行访问。
