@@ -451,7 +451,7 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 
 <a name="7e1dbffe"></a>
 # Private Rest  API 示例
-所有 Private API 请求都需要同时传递 "t" "accessKey" "signature"三个参数。具体使用请查看 [#Private Rest API调用完整示例](#39c58f5e)
+所有 Private API 请求都需要同时传递 `t` `accessKey` `signature` 三个参数。具体使用请查看 [#Private Rest API调用完整示例](#39c58f5e)
 
 <a name="c904cfdf"></a>
 ## account.balance 
