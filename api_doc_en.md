@@ -73,7 +73,7 @@ The Public API allows you to access Public market data.
 | market.statistics | query detail of one market |
 | market.tradeHistory | query the latest trade history |
 
-Public API Request Parameters and return data details, please refer to the specific [Public Rest API ](#bf822c64)example below
+Public API Request Parameters and return data details, please refer to the specific [Public Rest API ](#80e24b72)example below
 
 <a name="23661669"></a>
 ## Private API
@@ -91,7 +91,7 @@ The Private API allows for queries and transactions on your Private account.
 | order.latestDeal | query order history |
 | order.detail  | query order details |
 
-Private API Request Parameters and return data details, please refer to the specific [Private Rest API ](#7e1dbffe)example below
+Private API Request Parameters and return data details, please refer to the specific [Private Rest API ](#f323d8d8)example below
 
 **Note:**<br />In order to prevent data from being intercepted and tampered  during network transmission, whether it is Rest or Websocket, when requesting a Private API, you need to pass the three parameters of** "t", "acceskey" and "signature"** at the same time.
 
@@ -143,6 +143,7 @@ ws.send(msgpack.encode([
 
 <a name="80e24b72"></a>
 # Example of Public Rest API
+
 <a name="e4b1a609"></a>
 ## market.list  
 Get the list of tading pairs supported by BitMesh
@@ -379,7 +380,7 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 
 <a name="f323d8d8"></a>
 # Private Rest API example
-All Private API requests need to pass three parameters** "t" "acceskey" **and** "signature"** at the same time. Please see [# Full example for specific use](#39c58f5e)
+All Private API requests need to pass three parameters** "t" "acceskey" **and** "signature"** at the same time. Please see [# Full example for specific use](#59dacad9)
 
 <a name="c904cfdf"></a>
 ## account.balance 
