@@ -185,11 +185,11 @@ Get the latest ticker for all markets
 | min | string | 24H min |
 | change | string | 24H change (%) |
 
-**Example request**<br />**
+**Example request**
 ```shell
 https://api.bitmesh.com/?api=market.ticker
 ```
-<br /><br />**Example response**<br />**
+**Example response**
 ```
 { success: true,
   data:
@@ -233,8 +233,8 @@ https://api.bitmesh.com/?api=market.depth&params={"market":"btc_grin","limit":2,
 **Example response**<br />**
 ```json
 {
-	"success": true,
-	"data": {
+  "success": true,
+  "data": {
     "bids": [
       [
         0.00080711,
@@ -330,13 +330,13 @@ Check the last 50 transaction records in the market<br />**params**
 
 **Response Data**<br />Return 50 records of the recent transaction in the form of an array, followed by: **transaction time stamp (milliseconds)**, **Transaction direction**, **transaction price**, **transaction amount**<br />Direction of transaction: 1 indicates that Taker is Seller and 2 indicates that Taker is Buyer
 
-**Example request**<br />**
+**Example request**
 ```shell
 https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 ```
 
-**Example response**<br />**
-```json
+**Example response**
+```
 {
   "success": true,
   "data": [
@@ -695,13 +695,13 @@ At present, websocket has integrated the subscription of user transaction data b
 [
   "deal",
   {
-    "m": "btc_grin", // 成交的交易对
-    "s": "2", // 成交方向 1表示taker是卖单，2表示taker是买单
-    "d": "1787947298347827349243", //本次成交的id
-    "o": "13123132189812938", // 用户挂单的订单id
-    "p": "0.00021321", // 成交价格
-    "a": "0.1", // 成交数量
-    "t": "1552038284130843600" // 成交时间 
+    "m": "btc_grin", // market
+    "s": "2", // side 1 means taker is the seller，2 means taker is the buyer
+    "d": "1787947298347827349243", //deal id
+    "o": "13123132189812938", // order id
+    "p": "0.00021321", // deal price
+    "a": "0.1", // deal amount
+    "t": "1552038284130843600" // deal time 
   }
 ]
 ```
@@ -727,9 +727,9 @@ Example: query api of "order. put"
 ```javascript
 api:'order.put',
 params: JSON.stringify({
-  market:'btc_eth', //市场
-  price: '0.1', //价格
-  amount:'0.2', //数量
+  market:'btc_eth', 
+  price: '0.1', 
+  amount:'0.2',
   })
 t: 1551323157987, // Date.now()
 accessKey: 'ErKy6TT813WE1czJxFrhimMgMM5pmidC787811',
