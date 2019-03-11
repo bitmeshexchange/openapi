@@ -148,13 +148,15 @@ ws.send(msgpack.encode([
 | funds | string | 计价币种 |
 | stock | string | 基础币种 |
 
-**请求示例**<br />**
+**请求示例**
+
 ```shell
 https://api.bitmesh.com/?api=market.list
 ```
 
-**响应示例**<br />**
-```json
+**响应示例**
+
+```
 {
   "success": true,
   "data": [
@@ -190,11 +192,14 @@ https://api.bitmesh.com/?api=market.list
 | min | string | 24小时最低价 |
 | change | string | 24小时涨幅百分比 |
 
-**请求示例**<br />**
+**请求示例**
+
 ```shell
 https://api.bitmesh.com/?api=market.ticker
 ```
-<br /><br />**响应示例**<br />**
+
+**响应示例**
+
 ```json
 {
   "success": true,
