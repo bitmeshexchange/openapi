@@ -46,7 +46,6 @@ All API return data is in JSON format.<br />At the top of JSON, there are severa
 	}
 }
 ```
-[]()[]()
 
 <a name="39c9c036"></a>
 ## Public API
@@ -150,7 +149,7 @@ https://api.bitmesh.com/?api=market.list
 ```
 
 **Example response**<br />**
-```json
+```
 {
 	"success": true,
 	"data": [
@@ -191,7 +190,7 @@ Get the latest ticker for all markets
 https://api.bitmesh.com/?api=market.ticker
 ```
 <br /><br />**Example response**<br />**
-```json
+```
 { success: true,
   data:
    { btc_xlm: { name: 'btc_xlm', change: 0 },
@@ -377,7 +376,7 @@ Query account balance
 | available | string | avaliable |
 
 **Example response**<br />**
-```json
+```
 {
   success: true,
   data:[
@@ -411,7 +410,7 @@ Make a Limit Order
 **Response Data**<br />Returns the order ID if the delegate is successful and the error message if it fails
 
 **Example response**<br />**
-```json
+```
 { success: true, data: '1552117835346623381206561830' }
 ```
 
@@ -425,7 +424,7 @@ Place orders in batches
 **Response Data**<br />Returns an order ID array if the delegate is successful, and an error message if it fails
 
 **Example response**<br />**
-```json
+```
 { 
   success: true, 
   data: [
@@ -448,7 +447,7 @@ Cancel an order
 **Response Data**<br />Data returns true if the cancellation is successful, and error message if it fails
 
 **Example response**<br />**
-```json
+```
 { success: true, data: true }
 ```
 
@@ -461,7 +460,7 @@ Cancel Multiple Orders
 **Response Data**<br />Data returns true if the cancellation is successful, and error message if it fails
 
 **Example response**<br />**
-```json
+```
 { 
   success: true, 
   data: [
@@ -479,7 +478,7 @@ Cancel all orders
 **Response Data**<br />Data returns true if the cancellation is successful, and error message if it fails
 
 **Example response**<br />**
-```json
+```
 { success: true, data: true }
 ```
 
@@ -510,7 +509,7 @@ Query pending orders
 | filledfunds | string | filled amount（Quote currency） |
 
 **Example response**<br />**
-```json
+```
 { success: true,
   data:
    [ { id: '1552117835346623381206561830',
@@ -566,7 +565,7 @@ Query the completed order
 | filledfunds | string | filled amount（Quote currency） |
 
 **Example response**<br />**
-```json
+```
 { success: true,
   data:
    [ { id: '1552119988345858152416398117',
@@ -608,7 +607,7 @@ Query Order Details
 | side | string | order side（1 is buy，2 is sell） |
 
 **Example response**<br />**
-```json
+```
 {
   success: true,
   data:
@@ -633,7 +632,7 @@ All rest APIs of BitMesh can be called through websocket, And the websocket inte
 ## Request
 The data transmission between the client and the server is in the msgpack encoding format. The Calling method is as follows.
 
-```json
+```
 ws.send(msgpack.encode([
   id,
   api,
@@ -653,7 +652,7 @@ Interpretation of parameters
 
 Make  request
 
-```json
+```
 ws.send(msgpack.encode([
   123,
   'market.depth',
@@ -667,7 +666,7 @@ ws.send(msgpack.encode([
 
 Server Data response
 
-```json
+```
 [
   123,
   {
@@ -692,7 +691,7 @@ Private API call method please follow the[ Websocket call step](https://www.yuqu
 ## Subscription
 At present, websocket has integrated the subscription of user transaction data by default. When the user's order is completed, you will actively receive the message pushed by the server. The message format is as follows.
 
-```json
+```
 [
   "deal",
   {
@@ -761,7 +760,7 @@ The method will get
 ```javascript
 sha256('ErKy6TT813WE1czJxFrhimMgMM5pmidC787811' + 'order.put' + 'amount=0.2&market=btc_eth&price=0.1' + '1551323157987' + '12ff34e0dce1f74d78bf8837f5551e49c24e8302f51b8d24e658b902a20903f2e1').toString('hex').toLowerCase();
 
-5a848575009e99d71d25c259b99f7ba3894dd94e8f3a60bc363fed142bce2dfa
+// 5a848575009e99d71d25c259b99f7ba3894dd94e8f3a60bc363fed142bce2dfa//
 ```
 
 <a name="68596581"></a>
