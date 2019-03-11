@@ -723,7 +723,7 @@ Private API调用方式请按照 [Websocket调用步骤]()，首先生成 signat
 ## 订阅
 目前websocket已默认集成用户成交数据的订阅，当用户的订单被成交时会主动收到服务端推送的消息，消息格式如下。
 
-```json
+```js
 [
   "deal",
   {
