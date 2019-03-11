@@ -147,7 +147,8 @@ Private  API 允许对你的私人帐户进行查询和交易。
 
 Private API 请求参数及返回数据详情，请参照下文具体的 [Private Rest API](#7e1dbffe) 示例
 
-**注意：**<br />为防止数据在网络传输过程中被截取篡改，所以**无论是 Rest 方式，还是 Websocket 方式, 请求 Private  API 时都需要同时传递  "t"  "acce****ssKey"  "signature" 三个参数。**
+**注意：**
+**无论是 Rest 方式，还是 Websocket 方式, 请求 Private  API 时都需要同时传递  "t"  "accessKey"  "signature" 三个参数。**
 
 <a name="5cdc4563"></a>
 ## Rest 调用步骤
@@ -175,13 +176,13 @@ BitMesh所有的 rest API 都可以通过websocket方式调用，同时websocket
 
 如果是请求 Public API，则可直接请求（参照下文 [Websocket API](#adb18e42) 示例）<br />如果是请求 Private API，请按以下步骤
 
-**1.**首先，请按照以下方法生成 signature。
+1.首先，请按照以下方法生成 signature。
 
 ```javascript
 const Signature = sha256([accessKey, accessSecret, timestamp].join('\n'));
 ```
 
-**2.**通过以下方法调用 auth API。
+2.通过以下方法调用 auth API。
 
 ```javascript
 ws.send(msgpack.encode([
@@ -193,7 +194,8 @@ ws.send(msgpack.encode([
 ]));
 ```
 
-**3.**调用 Private  API<br />请参照下文具体的 websocket API 调用示例
+3.调用 Private  API
+请参照下文具体的 websocket API 调用示例
 
 
 <a name="bf822c64"></a>
