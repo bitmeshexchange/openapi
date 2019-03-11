@@ -10,7 +10,11 @@
 
 <a name="ec97ee8d"></a>
 # 接入说明
-BitMesh目前提供 **rest** 与 **websocket** 两种接入方式；<br />BitMesh API目前提供“Public Https API”与“Private Https API”两种类型；<br />Public API 可以直接访问，Private API 需要使用 API KEY并通过 SHA256进行签名;<br />BitMesh所有的 Websocket请求都使用 [msgpack](https://msgpack.org/)进行编码；<br />BitMesh所有的 Rest API 都可以通过 Websocket方式调用，同时Websocket API还能订阅数据，当产生响应的数据时服务端会主动推送（参照下文 [Websocket API](#adb18e42)）。
+- BitMesh目前提供 **rest** 与 **websocket** 两种接入方式；
+- BitMesh API目前提供“Public Https API”与“Private Https API”两种类型；
+- Public API 可以直接访问，Private API 需要使用 API KEY并通过 SHA256进行签名;
+- BitMesh所有的 Websocket请求都使用 [msgpack](https://msgpack.org/)进行编码；
+- BitMesh所有的 Rest API 都可以通过 Websocket方式调用，同时Websocket API还能订阅数据，当产生响应的数据时服务端会主动推送（参照下文 [Websocket API](#adb18e42)）。
 
 <a name="d8ae4cd2"></a>
 ## API KEY
@@ -46,13 +50,6 @@ BitMesh目前提供 **rest** 与 **websocket** 两种接入方式；<br />BitM
   }
 }
 ```
-[
-      
-    ]()
-  
-    [
-      
-    ]()
 
 <a name="381df2ec"></a>
 ## Public  API
