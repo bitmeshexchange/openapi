@@ -53,7 +53,7 @@ BitMesh currently provides two access methods: **rest** and **websocket**;<br />
 
 <a name="d8ae4cd2"></a>
 ## API KEY
-If you do not  have a BitMesh account, please [register ](https://bitmesh.com/?#/register)first<br />After registering a BitMesh account, you can go to the personal center and [add API](https://bitmesh.com/#/user) (currently only 1 API is allowed for each BitMesh account, query and trade permissions are enabled by default ), api key can be generated after the Account Verification (never disclose your api key. If you suspect that it has been leaked, please delete and generate a new KEY immediately)
+If you do not  have a BitMesh account, please [register ](https://bitmesh.com/?#/register)first<br />After registering a BitMesh account, you can go to the personal center and [add API](https://bitmesh.com/#/user/api) (currently only 1 API is allowed for each BitMesh account, query and trade permissions are enabled by default ), api key can be generated after the Account Verification (never disclose your api key. If you suspect that it has been leaked, please delete and generate a new KEY immediately)
 
 <a name="d82a2fa7"></a>
 ## API request format
