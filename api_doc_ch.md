@@ -57,7 +57,7 @@
 
 <a name="d8ae4cd2"></a>
 ## API KEY
-如果你还没有BitMesh账户，请先进行 [注册](https://bitmesh.com/?#/register)<br />注册BitMesh账户后，你可以到个人中心 [添加API](https://bitmesh.com/#/user)（目前每个BitMesh账户仅允许添加1个API，默认开启查询与交易权限），通过账户验证后便可生成API KEY（在任何时候请匆泄露您的API KEY，如果你怀疑已经泄露，请立刻删除并生成新的密钥）
+如果你还没有BitMesh账户，请先进行 [注册](https://bitmesh.com/?#/register)<br />注册BitMesh账户后，你可以到个人中心 [添加API](https://bitmesh.com/#/user/api)（目前每个BitMesh账户仅允许添加1个API，默认开启查询与交易权限），通过账户验证后便可生成API KEY（在任何时候请匆泄露您的API KEY，如果你怀疑已经泄露，请立刻删除并生成新的密钥）
 
 <a name="044744e3"></a>
 ## API 请求格式
