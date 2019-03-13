@@ -12,13 +12,13 @@
   * [Private API](#private-api)
   * [Rest call step](#rest-call-step)
   * [Websocket call steps](#websocket-call-steps)
-- [Example of Public Rest API](#example-of-public-rest-api)
+- [Public Rest API](#example-of-public-rest-api)
   * [market.list](#marketlist)
   * [market.ticker](#marketticker)
   * [market.depth](#marketdepth)
   * [market.statistics](#marketstatistics)
   * [market.tradeHistory](#markettradehistory)
-- [Private Rest API example](#private-rest-api-example)
+- [Private Rest API](#private-rest-api-example)
   * [account.balance](#accountbalance)
   * [order.put](#orderput)
   * [order.batchPut](#orderbatchput)
@@ -183,7 +183,7 @@ ws.send(msgpack.encode([
 3. Call Private API<br />Please refer to the specific websocket API call example below
 
 <a name="80e24b72"></a>
-# Example of Public Rest API
+# Public Rest API
 
 <a name="e4b1a609"></a>
 ## market.list  
@@ -420,7 +420,7 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 
 
 <a name="f323d8d8"></a>
-# Private Rest API example
+# Private Rest API
 All Private API requests need to pass three parameters** "t" "acceskey" **and** "signature"** at the same time. Please see [# Full example for specific use](#59dacad9)
 
 <a name="c904cfdf"></a>
