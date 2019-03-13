@@ -172,7 +172,7 @@ const Signature = sha256([accessKey, accessSecret, timestamp].join('\n'));
 
 ```javascript
 ws.send(msgpack.encode([
-  Date.now(),
+  123,
   'auth',
   {
     accessKey, timestamp, signature
