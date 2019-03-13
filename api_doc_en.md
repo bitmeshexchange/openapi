@@ -61,7 +61,7 @@ The uniform URL path for all API requests is **https://api.bitmesh.com** and the
 
 | Field | Type | Description |
 | --- | --- | --- |
-| API | string | Requested API name |
+| api | string | Requested API name |
 | params | json object | Parameters required by the API (optional) |
 | t | string | Current timestamp, obtained by Date.now() |
 | accessKey | string | API KEY provided by BitMesh |
