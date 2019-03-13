@@ -67,12 +67,14 @@ The uniform URL path for all API requests is **https://api.bitmesh.com** and the
 | accessKey | string | API KEY provided by BitMesh |
 | signature | string | Sha256 signature |
 
-Note: Only the following three parameters are required when requesting the Private API
+Note: Only the last three parameters are required when requesting the Private API
 
 
 <a name="a455473f"></a>
 ## API return format
-All API return data is in JSON format.<br />At the top of JSON, there are several fields that represent the Request status and attributes: **"success"**, and **"data "**;<br />The content returned by the actual interface is in the "data" field, "success" means the request result, "true" means the request is successful, and "false" means the request fails.
+All API return data is in JSON format.
+At the top of JSON, there are several fields that represent the Request status and attributes: **"success"**, and **"data "**;
+The content returned by the actual interface is in the "data" field, "success" means the request result, "true" means the request is successful, and "false" means the request fails.
 
 <a name="b1762178"></a>
 ## API error code
