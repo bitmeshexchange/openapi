@@ -606,11 +606,11 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 | userid | string | 用户UID |
 | side | string | 订单方向（1为购买，2为出售） |
 | leftamount | string | 剩余数量（基础币种单位） |
-| leftfunds | string | 剩余数量（计价币种单位） |
+| leftfunds | string | 剩余金额（计价币种单位） |
 | market | string | 交易对 |
 | type | string | 订单类型（1为限价，2为市价） |
 | filledamount | string | 已成交数量（基础币种单位） |
-| filledfunds | string | 已成交数量（计价币种单位） |
+| filledfunds | string | 已成交金额（计价币种单位） |
 
 **返回示例**
 ```json
@@ -665,11 +665,11 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 | createtime | int64 | 订单创建时间 |
 | side | string | 订单方向（1为购买，2为出售） |
 | leftamount | string | 剩余数量（基础币种单位） |
-| leftfunds | string | 剩余数量（计价币种单位） |
+| leftfunds | string | 剩余金额（计价币种单位） |
 | market | string | 交易对 |
 | type | string | 订单类型（1为限价，2为市价） |
 | filledamount | string | 已成交数量（基础币种单位） |
-| filledfunds | string | 已成交数量（计价币种单位） |
+| filledfunds | string | 已成交金额（计价币种单位） |
 
 **返回示例**
 ```json
@@ -711,8 +711,8 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 | price | string | 订单价格 |
 | leftamount | string | 剩余数量（基础币种单位） |
 | filledamount | string | 已成交数量（基础币种单位） |
-| leftfunds | string | 剩余数量（计价币种单位） |
-| filledfunds | string | 已成交数量（计价币种单位） |
+| leftfunds | string | 剩余金额（计价币种单位） |
+| filledfunds | string | 已成交金额（计价币种单位） |
 | side | string | 订单方向（1为购买，2为出售） |
 
 **返回示例**
