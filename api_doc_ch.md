@@ -94,15 +94,17 @@
 
 | 错误码 | 描述 |
 | --- | --- |
-|404 |找不到对应的api|
-|100 |signature 过期|
-|101 |signature 错误|
-|102 |accesskey 缺失|
-|103 |signature 缺失|
-|104 |accesskey 错误|
-|105 |api 缺失|
-|106 |accesskey 不存在|
-|107 |请求频率受限|
+|100 |下单数量太小|
+|101 |账户余额不足|
+|4040 |找不到对应的api|
+|1000 |signature 过期|
+|1010 |signature 错误|
+|1020 |accesskey 缺失|
+|1030 |signature 缺失|
+|1040 |accesskey 错误|
+|1050 |api 缺失|
+|1060 |accesskey 不存在|
+|1070 |请求频率受限|
 
 <a name="381df2ec"></a>
 ## Public  API
