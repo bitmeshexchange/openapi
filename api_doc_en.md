@@ -576,12 +576,16 @@ order array if there are pending orders
 | price | string | price |
 | userid | string | UID |
 | side | string | order side（1 is buy，2 is sell） |
-| leftamount | string | left amount（Base currency） |
-| leftfunds | string | left amount（Quote currency） |
+| leftamount | string | left 
+
+
+
+Base currency） |
+| leftfunds | string | left value（Quote currency） |
 | market | string | trading pair |
 | type | string | order type（1 is limit，2 is market） |
 | filledamount | string | filled amount（Base currency） |
-| filledfunds | string | filled amount（Quote currency） |
+| filledfunds | string | filled value（Quote currency） |
 
 **Example response**
 
@@ -634,11 +638,11 @@ Query the completed order
 | createtime | int64 | order createtime |
 | side | string | order side（1 is buy，2 is sell） |
 | leftamount | string | left amount（Base currency） |
-| leftfunds | string | left amount（Quote currency） |
+| leftfunds | string | left value（Quote currency） |
 | market | string | trading pair |
 | type | string | order type（1 is limit，2 is market） |
 | filledamount | string | filled amount（Base currency） |
-| filledfunds | string | filled amount（Quote currency） |
+| filledfunds | string | filled value（Quote currency） |
 
 **Example response**
 ```
@@ -678,8 +682,8 @@ Query Order Details
 | price | string | order price |
 | leftamount | string | left amount（Base currency） |
 | filledamount | string | filled amount（Base currency） |
-| leftfunds | string | left amount（Quote currency） |
-| filledfunds | string | filled amount（Quote currency） |
+| leftfunds | string | left value（Quote currency） |
+| filledfunds | string | filled value（Quote currency） |
 | side | string | order side（1 is buy，2 is sell） |
 
 **Example response**
