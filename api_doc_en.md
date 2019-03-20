@@ -91,15 +91,17 @@ Common error codes
 
 | code | description |
 | --- | --- |
-|404 |api_not_found|
-|100 |signature expired|
-|101 |signature invalid|
-|102 |accesskey requied|
-|103 |signature requied|
-|104 |accesskey invalid|
-|105 |api requied|
-|106 |accesskey not exist|
-|107 |request frequency limit|
+|100 |amount too small|
+|101 |balance insufficent|
+|4040 |api not found|
+|1000 |signature expired|
+|1010 |signature invalid|
+|1020 |accesskey requied|
+|1030 |signature requied|
+|1040 |accesskey invalid|
+|1050 |api requied|
+|1060 |accesskey not exist|
+|1070 |request frequency limit|
 
 
 <a name="39c9c036"></a>
