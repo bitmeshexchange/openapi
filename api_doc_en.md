@@ -470,8 +470,8 @@ Make a Limit Order
 | Field | Type | Description |
 | --- | --- | --- |
 | market | string | the trading pair to query |
-| price | double | price |
-| amount | double | amount |
+| price | string | price |
+| amount | string | amount |
 | side | int | order type（1 buy，2 sell） |
 
 **Response Data**
