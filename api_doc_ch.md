@@ -497,8 +497,8 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | market | string | 交易对名称 |
-| price | double | 价格 |
-| amount | double | 数量 |
+| price | string | 价格 |
+| amount | string | 数量 |
 | side | int | 订单方向（1为购买，2为出售） |
 
 **返回数据**
