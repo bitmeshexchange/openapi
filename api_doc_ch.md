@@ -737,6 +737,9 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
 # websocket API
 BitMesh所有的 rest API 都可以通过websocket方式调用，同时websocket接口还能订阅数据，当产生响应的数据时服务端会主动推送。Websocket 获取数据的方式分为请求和订阅两种。
 
+## Endpoit
+websocket服务器地址为 wss://api.bitmesh.com
+
 <a name="75b16081"></a>
 ## 请求
 客户端和服务端的数据传输采用msgpack编码格式，调用方式如下。
