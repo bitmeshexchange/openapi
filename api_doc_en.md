@@ -708,6 +708,10 @@ Query Order Details
 # websocket API
 All rest APIs of BitMesh can be called through websocket, And the websocket interface can also subscribe to data, and the server will actively push when the response data is generated. Websocket obtains data in two ways: request and subscription.
 
+
+## Endpoint
+wss://api.bitmesh.com
+
 <a name="Request"></a>
 ## Request
 The data transmission between the client and the server is in the msgpack encoding format. The Calling method is as follows.
