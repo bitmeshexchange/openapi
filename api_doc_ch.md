@@ -170,7 +170,7 @@ BitMesh所有的 rest API 都可以通过websocket方式调用，同时websocket
 1.首先，请按照以下方法生成 signature。
 
 ```javascript
-const Signature = sha256([accessKey, accessSecret, timestamp].join('\n'));
+const Signature = sha256([accessKey, accessSecret, timestamp].join('\n')).toString('hex').toLowerCase();
 ```
 
 2.通过以下方法调用 auth API。
@@ -724,9 +724,9 @@ https://api.bitmesh.com/?api=market.tradeHistory&params={"market":"btc_grin"}
     "createtime": 1552118841532,
     "price": "0.26512027",
     "leftamount": "0.281557",
-    "filledamount": 0,
+    "filledamount": "0",
     "leftfunds": "0.07464646",
-    "filledfunds": 0,
+    "filledfunds": "0",
     "side": "1"
   }
 }
