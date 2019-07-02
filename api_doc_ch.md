@@ -842,7 +842,7 @@ params: JSON.stringify({
   price: '0.1', //价格
   amount:'0.2', //数量
   })
-t: 1551323157987, // Date.now()
+t: 1551323157987, // Date.now() 精确到毫秒
 accessKey: 'ErKy6TT813WE1czJxFrhimMgMM5pmidC787811',
 ```
 
@@ -887,7 +887,7 @@ http.request({
       price: '0.1',
       amount:'0.2',
     }),
-    t: 1551323157987, // Date.now()
+    t: 1551323157987, // Date.now() 精确到毫秒
     accessKey: 'ErKy6TT813WE1czJxFrhimMgMM5pmidC787811',
     signature：'5a848575009e99d71d25c259b99f7ba3894dd94e8f3a60bc363fed142bce2dfa', 
   }
