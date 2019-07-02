@@ -65,9 +65,9 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| API | string | 请求的API名称 |
+| api | string | 请求的API名称 |
 | params | json object | API需要的参数(可选) |
-| t | string | 当前时间戳，通过Date.now()获取 |
+| t | string | 当前时间戳，通过Date.now()获取精确到毫秒 |
 | accessKey | string | BitMesh提供的API KEY |
 | signature | string | sha256签名，为防止数据在传输过程中被截取 |
 
