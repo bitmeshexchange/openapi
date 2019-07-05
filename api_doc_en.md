@@ -93,6 +93,7 @@ Common error codes
 | --- | --- |
 |100 |amount too small|
 |101 |balance insufficent|
+|202 |order not exist|
 |4040 |api not found|
 |1000 |signature expired|
 |1010 |signature invalid|
